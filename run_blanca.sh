@@ -18,9 +18,9 @@ echo "== This is the scripting step! =="
 
 pip install datasets
 
-#wget http://nlp.cs.washington.edu/entity_type/data/ultrafine_acl18.tar.gz
+wget http://nlp.cs.washington.edu/entity_type/data/ultrafine_acl18.tar.gz
 
-#tar -xvzf ultrafine_acl18.tar.gz
+tar -xvzf ultrafine_acl18.tar.gz
 
 python run_code.py 
 

@@ -1,7 +1,7 @@
 from datasets import load_dataset
 
 # Load the BookCorpus dataset
-dataset = load_dataset("bookcorpus")
+dataset = load_dataset("bookcorpus", trust_remote_code=True)
 
 from collections import Counter
 from tqdm import tqdm

@@ -2,7 +2,7 @@
 
 #SBATCH --nodes=1
 #SBATCH --ntasks=64
-#SBATCH --time=00:10:00
+#SBATCH --time=24:00:00
 #SBATCH --partition=amilan
 #SBATCH --output=run_code-%j.out
 #SBATCH --mail-type="ALL"

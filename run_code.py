@@ -22,13 +22,13 @@ print(train_data[0])
 
 import json
 data = []
-with open('/content/release/crowd/train.json', 'r') as file:
+with open('/release/crowd/train.json', 'r') as file:
   for line in file:
     data.append(json.loads(line))
-with open('/content/release/crowd/test.json', 'r') as file:
+with open('/release/crowd/test.json', 'r') as file:
   for line in file:
     data.append(json.loads(line))
-with open('/content/release/crowd/dev.json', 'r') as file:
+with open('/release/crowd/dev.json', 'r') as file:
   for line in file:
     data.append(json.loads(line))
 unique_entities = set()

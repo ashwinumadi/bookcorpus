@@ -11,7 +11,7 @@ import pickle
 #string_count = Counter()
 
 # Load the Counter object from the pickle file
-with open('ufet_count2.pkl', 'rb') as f:
+with open('ufet_count12.pkl', 'rb') as f:
     string_count = pickle.load(f)
 
 # Access the training data
@@ -22,13 +22,13 @@ print(train_data[0])
 
 import json
 data = []
-with open('/release/crowd/train.json', 'r') as file:
+with open('/scratch/alpine/asum8093/bookcorpus/release/crowd/train.json', 'r') as file:
   for line in file:
     data.append(json.loads(line))
-with open('/release/crowd/test.json', 'r') as file:
+with open('/scratch/alpine/asum8093/bookcorpus/release/crowd/test.json', 'r') as file:
   for line in file:
     data.append(json.loads(line))
-with open('/release/crowd/dev.json', 'r') as file:
+with open('/scratch/alpine/asum8093/bookcorpus/release/crowd/dev.json', 'r') as file:
   for line in file:
     data.append(json.loads(line))
 unique_entities = set()
@@ -37,7 +37,7 @@ for obj in data:
 
 unique_entities = {word.lower() for word in unique_entities}
 
-a = train_data[5000000:40000000]
+a = train_data[43000000:]
 # Iterate over the dataset and count occurrences of strings in your set
 for entry in tqdm(a['text'], desc="Processing items", ncols=100):
     text = entry  # Assuming the text is in the 'text' field, modify if needed
@@ -48,5 +48,5 @@ for entry in tqdm(a['text'], desc="Processing items", ncols=100):
 
 
 # Store the Counter object in a pickle file
-with open('ufet_count3.pkl', 'wb') as f:
+with open('ufet_count_all.pkl', 'wb') as f:
     pickle.dump(string_count, f)
